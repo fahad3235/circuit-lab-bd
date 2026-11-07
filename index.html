@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circuit Lab BD &mdash; Build DC circuits &amp; learn Ohm&rsquo;s law</title>
+<meta name="description" content="Offline bilingual EN/Bangla DC circuit lab: build a loop, watch current flow, read live voltages and power, solve Ohm's law, and take the quiz.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <div>
+      <h1 id="app-title">Circuit Lab BD</h1>
+      <p id="app-subtitle" class="subtitle"></p>
+    </div>
+    <button id="lang-toggle" class="btn lang-btn" type="button">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2 id="builder">Circuit builder</h2>
+    <p class="hint" id="builderHint"></p>
+    <div class="add-row">
+      <button class="btn" id="add-battery" type="button">+ Battery</button>
+      <button class="btn" id="add-resistor" type="button">+ Resistor</button>
+      <button class="btn" id="add-bulb" type="button">+ Bulb</button>
+      <button class="btn" id="add-switch" type="button">+ Switch</button>
+      <button class="btn" id="add-parallel" type="button">+ Parallel block</button>
+      <button class="btn ghost" id="reset-circuit" type="button">Reset circuit</button>
+    </div>
+    <div id="parts" class="parts"></div>
+  </section>
+
+  <section class="card">
+    <h2 id="schematic">Schematic</h2>
+    <p class="hint" id="schematicHint"></p>
+    <svg id="schematic-svg" viewBox="0 0 360 220" role="img" aria-label="Circuit schematic" width="100%"></svg>
+    <p class="note" id="schematic-note"></p>
+  </section>
+
+  <section class="card">
+    <h2 id="readings">Live readings</h2>
+    <div id="readings-box"></div>
+  </section>
+
+  <section class="card">
+    <h2 id="ohms">Ohm&rsquo;s law calculator</h2>
+    <p class="hint" id="ohmsHint"></p>
+    <div class="ohms-grid">
+      <label><span id="ohms-v-label">Voltage (V)</span><input id="ohms-v" type="number" min="0" step="any" inputmode="decimal"></label>
+      <label><span id="ohms-i-label">Current (A)</span><input id="ohms-i" type="number" min="0" step="any" inputmode="decimal"></label>
+      <label><span id="ohms-r-label">Resistance (&Omega;)</span><input id="ohms-r" type="number" min="0" step="any" inputmode="decimal"></label>
+      <label><span id="ohms-p-label">Power (W)</span><input id="ohms-p" type="number" min="0" step="any" inputmode="decimal"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="ohms-solve" type="button">Solve</button>
+      <button class="btn ghost" id="ohms-clear" type="button">Clear</button>
+    </div>
+    <div id="ohms-result"></div>
+  </section>
+
+  <section class="card">
+    <h2 id="presets">Sample circuits</h2>
+    <div id="preset-list" class="preset-list"></div>
+  </section>
+
+  <section class="card">
+    <h2 id="quiz">Ohm&rsquo;s law quiz</h2>
+    <p class="hint" id="quizHint"></p>
+    <div id="quiz-box"></div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p id="disclaimer"></p>
+  <p class="saved-note">Circuit Lab BD &middot; 100% offline &middot; <span id="saved-label">Saved on this device</span></p>
+</footer>
+
+<script src="js/logic.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
